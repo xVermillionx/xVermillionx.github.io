@@ -8,6 +8,15 @@ body {
   color: white;
 }
 
+section:nth-child(odd) {
+  background-color: #692345;
+  color: white;
+}
+
+section:nth-child(even) {
+  background-color: #452369;
+  color: white;
+}
 
 h1 {
   color: purple;
