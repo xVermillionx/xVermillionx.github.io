@@ -1,0 +1,19 @@
+:root {
+  --var:#454545;
+}
+
+
+body {
+  background-color: black;
+  color: white;
+}
+
+
+h1 {
+  color: purple;
+}
+
+
+h2 {
+  color: hotpink;
+}
