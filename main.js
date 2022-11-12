@@ -11,9 +11,14 @@ window.fetch("https://api.github.com/users/xVermillionx/repos", {
 })
   .then((response) => response.json())
   .then((data) => {
-    let pick = ['name', 'html_url', 'stargazers_count', 'watchers_count'];
-    let newdata = data.map((e) => Object.fromEntries(Object.entries(e).filter(r => pick.includes(r[0]))))
+    let pick = ['name', 'html_url', 'stargazers_count', 'watchers_count', 'fork'];
+    let newdata = data.map((e) => Object.fromEntries(Object.entries(e).filter(r => r || pick.includes(r[0])))).sort((a,b) => a.fork)
+
+    let repolist = document.getElementById('repos');
+    let forklist = document.getElementById('forks');
+    let misclist = document.getElementById('misc');
     for(e of newdata) {
+      // if(e.fork) continue;
       let div = document.createElement('div');
       div.className = "tile";
       let a = document.createElement("a");
@@ -26,10 +31,14 @@ window.fetch("https://api.github.com/users/xVermillionx/repos", {
       div.appendChild(a);
       div.appendChild(b);
       div.appendChild(c);
-      let repolist = document.getElementById('repos');
       let li = document.createElement('li');
       li.appendChild(div);
-      repolist.appendChild(li);
+      if(e.fork){
+        forklist.appendChild(li);
+      }else{
+        repolist.appendChild(li);
+      }
+      // misclist.appendChild(li);
     }
     console.log('Success: ', newdata)
   })
