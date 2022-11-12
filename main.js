@@ -2,6 +2,7 @@ const star = '&#11088;'
 const eye = '&#128065;'
 const noemoji = '&#xFE0E;'
 
+window.onload = (_event) => {
 window.fetch("https://api.github.com/users/xVermillionx/repos", {
   method: 'GET',
   headers: {
@@ -33,3 +34,5 @@ window.fetch("https://api.github.com/users/xVermillionx/repos", {
     console.log('Success: ', newdata)
   })
   .catch((err) => console.log('Error: ', err))
+}
+
