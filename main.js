@@ -10,7 +10,6 @@ window.fetch("https://api.github.com/users/xVermillionx/repos", {
 })
   .then((response) => response.json())
   .then((data) => {
-    // let newdata = data.map((e) => [e.name, e.html_url, e.stargazers_count, e.watchers_count])
     let pick = ['name', 'html_url', 'stargazers_count', 'watchers_count'];
     let newdata = data.map((e) => Object.fromEntries(Object.entries(e).filter(r => pick.includes(r[0]))))
     for(e of newdata) {
@@ -26,8 +25,6 @@ window.fetch("https://api.github.com/users/xVermillionx/repos", {
       div.appendChild(a);
       div.appendChild(b);
       div.appendChild(c);
-      // let sections = document.getElementsByTagName('section');
-      // sections[sections.length-1].appendChild(div);
       let repolist = document.getElementById('repos');
       let li = document.createElement('li');
       li.appendChild(div);
