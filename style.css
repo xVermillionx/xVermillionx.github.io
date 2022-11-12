@@ -60,3 +60,48 @@ h2 {
   color: hotpink;
   font-size: 1.5em;
 }
+
+ul#repos > li {
+  margin:10px;
+}
+
+div.tile {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  /* border: #333333 1px solid; */
+  border-radius: 2px;
+  box-shadow: 0px 0px 1px #000;
+}
+div.tile:hover{
+  box-shadow: 1px 1px 3px #000;
+}
+
+div.tile > a {
+  text-decoration: none;
+  color: darkgrey;
+  display: block;
+  padding: 4px;
+  margin: 4px;
+  text-shadow: 1px 1px #000;
+}
+div.tile > a:not(:first-child){
+  background-color: #454545;
+  border-radius:4px;
+}
+
+div.tile > a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+div.tile > a:nth-child(2)::before{
+  content:"\2B50";
+  margin-right: 5px;
+}
+div.tile > a:nth-child(3)::before{
+  content:"\1F441";
+  margin-right: 5px;
+}
+
