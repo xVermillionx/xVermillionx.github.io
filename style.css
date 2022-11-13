@@ -99,8 +99,10 @@ div.tile {
   /* border: #333333 1px solid; */
   border-radius: 2px;
   box-shadow: 0px 0px 1px #000;
+  transition: color, box-shadow, transform .1s 0s cubic-bezier(.63,.55,.98,.34);
 }
 div.tile:hover{
+  transform: scale(1.02);
   box-shadow: 1px 1px 3px #000;
 }
 
@@ -117,9 +119,11 @@ div.tile > a:not(:first-child){
   border-radius:4px;
 }
 
+div.tile:hover > a {
+  color: white;
+}
 div.tile > a:hover {
   text-decoration: underline;
-  color: white;
 }
 
 div.tile > a:nth-child(2)::before{
