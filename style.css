@@ -41,6 +41,9 @@ section:nth-last-child(2) {
   flex-grow:2;
 }
 
+img#avatar {
+  border-radius: 50%;
+}
 
 /* ul {
   list-style: none;
